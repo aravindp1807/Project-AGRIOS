@@ -103,6 +103,31 @@ npm run dev
 ```
 The application will launch on your local dev server at [http://localhost:5173](http://localhost:5173).
 
+
+---
+
+## ☁️ Cloud Deployment
+
+You can deploy **agrios** to the cloud for free using Render for the backend and Vercel for the frontend:
+
+### 1. Deploy Backend (Render)
+1. Sign up or log in to [Render.com](https://render.com).
+2. Click **New +** and select **Blueprint**.
+3. Connect your GitHub repository `Project-AGRIOS`.
+4. Render will automatically detect the `render.yaml` configuration and set up the **agrios-backend** Web Service using Docker.
+5. Provide your API keys (e.g. `GEMINI_API_KEY`, `OPENROUTER_API_KEY`, etc.) as environment variables in the Render dashboard.
+6. Once deployed, copy your backend URL (e.g., `https://agrios-backend.onrender.com`).
+
+### 2. Deploy Frontend (Vercel)
+1. Sign up or log in to [Vercel.com](https://vercel.com).
+2. Click **Add New** -> **Project** and import your `Project-AGRIOS` repository.
+3. In the configuration settings:
+   * Set **Root Directory** to `frontend`.
+   * Add a new **Environment Variable**:
+     * Key: `VITE_API_BASE_URL`
+     * Value: Your Render backend URL (e.g. `https://agrios-backend.onrender.com`)
+4. Click **Deploy**. Vercel will build and host your frontend.
+
 ---
 
 ## 🗃️ Database Schema
