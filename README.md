@@ -1,6 +1,6 @@
-# agrios — Agricultural & Geospatial Resource Intelligence System
+# Agrios — Agricultural & Geospatial Resource Intelligence System
 
-**agrios** (Agricultural & Geospatial Resource Intelligence System) is a state-of-the-art open-source intelligence platform engineered to monitor, analyze, and report on agricultural and environmental resource telemetry. By integrating multi-spectral satellite overlays, ground-station hydrologic data, and agro-climate history, **agrios** provides farm managers, researchers, and environmental analysts with actionable intelligence for any user-defined geographic Area of Interest (AOI).
+**Agrios** (Agricultural & Geospatial Resource Intelligence System) is a state-of-the-art open-source intelligence platform engineered to monitor, analyze, and report on agricultural and environmental resource telemetry. By integrating multi-spectral satellite overlays, ground-station hydrologic data, and agro-climate history, **agrios** provides farm managers, researchers, and environmental analysts with actionable intelligence for any user-defined geographic Area of Interest (AOI).
 
 The platform is designed to operate seamlessly under two core paradigms:
 1. **Search Mode (On-Demand Intelligence)**: Instantly query any latitude/longitude coordinate with a specified radius. The system fetches real-time and historical telemetry across climate, hydrology, and vegetation channels, generating an AI-synthesized intelligence report on the spot.
