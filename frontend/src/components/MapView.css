@@ -1,0 +1,143 @@
+.map-view-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0d0f12;
+}
+
+.map-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom glowing markers */
+.custom-marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.custom-marker:hover {
+  background: rgba(16, 185, 129, 0.4);
+  transform: scale(1.2);
+}
+
+.custom-marker.selected {
+  width: 20px;
+  height: 20px;
+  background: rgba(59, 130, 246, 0.3);
+  border: 2px solid #60a5fa;
+  box-shadow: 0 0 15px #3b82f6, 0 0 5px #60a5fa;
+  animation: pulse-glow 2s infinite;
+}
+
+.marker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  transition: all 0.3s ease;
+}
+
+.custom-marker.selected .marker-dot {
+  background: #60a5fa;
+  width: 8px;
+  height: 8px;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.map-coordinates-legend {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 10px;
+  color: #9ca3af;
+  font-family: ui-monospace, monospace;
+  display: flex;
+  gap: 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Basemap Selector Widget */
+.basemap-selector {
+  position: absolute;
+  top: 20px;
+  left: 360px; /* Positioned just to the right of the 320px sidebar + margin */
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(17, 24, 39, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  z-index: 5;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.basemap-btn {
+  background: none;
+  border: 1px solid transparent;
+  outline: none;
+  color: #9ca3af;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.basemap-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.basemap-btn.active {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.15);
+}
+
+/* Adjust maplibre navigation control style to fit our dark UI */
+.maplibregl-ctrl-group {
+  background: rgba(17, 24, 39, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.maplibregl-ctrl-group button {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  filter: invert(1) !important;
+}
+
+.maplibregl-ctrl-group button:last-child {
+  border-bottom: none !important;
+}

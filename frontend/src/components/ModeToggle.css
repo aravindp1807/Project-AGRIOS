@@ -1,0 +1,101 @@
+.mode-toggle-container {
+  padding: 16px;
+  background: rgba(17, 24, 39, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mode-toggle-header h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f3f4f6;
+  letter-spacing: 0.3px;
+}
+
+.mode-toggle-header p {
+  margin: 2px 0 0 0;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.mode-toggle-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mode-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.mode-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mode-btn.active {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mode-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mode-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mode-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e5e7eb;
+  transition: color 0.3s ease;
+}
+
+.mode-btn.active .mode-label {
+  color: #ffffff;
+}
+
+.mode-desc {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.glow-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  box-shadow: 0 0 10px var(--mode-color);
+  border-radius: 0 2px 2px 0;
+}

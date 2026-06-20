@@ -1,0 +1,40 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+
+# Node Dependencies
+node_modules/
+
+# Environment Configurations (Crucial for API Key security)
+.env
+backend/.env
+.env*.local
+
+# SQLite Database Files
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+backend/*.db
+backend/*.db-*
+
+# Python Compilation Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Production Build Folders
+dist/
+build/
+out/
+
+# IDE and OS Cache Files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+ehthumbs.db

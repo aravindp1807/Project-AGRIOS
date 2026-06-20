@@ -1,0 +1,291 @@
+.aoi-report-empty {
+  padding: 40px 20px;
+  background: rgba(17, 24, 39, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  text-align: center;
+  color: #9ca3af;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.aoi-report-empty p {
+  font-size: 13px;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+.aoi-report-container {
+  padding: 20px;
+  background: rgba(17, 24, 39, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.report-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.report-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.coords-sub {
+  margin: 4px 0 0 0;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.refresh-report-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refresh-report-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: #60a5fa;
+  color: #ffffff;
+}
+
+.refresh-report-btn:disabled {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.spinning svg {
+  animation: spin 1s linear infinite;
+}
+
+.report-section-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ai-synthesis-card {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ai-synthesis-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ai-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.provider-tag {
+  font-size: 10px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ai-synthesis-content {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.ai-synthesis-content p {
+  margin: 0 0 10px 0;
+}
+
+.ai-synthesis-content p:last-child {
+  margin: 0;
+}
+
+.ai-synthesis-content h4 {
+  margin: 12px 0 6px 0;
+  font-size: 13px;
+  color: #f3f4f6;
+  font-weight: 600;
+}
+
+.ai-synthesis-content li {
+  margin-left: 14px;
+  margin-bottom: 6px;
+}
+
+.report-loading-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  gap: 12px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.spin-loading {
+  animation: spin 1s linear infinite;
+  color: #38bdf8;
+}
+
+.metrics-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metrics-section h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.section-sub {
+  margin: 0 0 12px 0;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.empty-metrics-msg {
+  font-size: 11px;
+  color: #6b7280;
+  padding: 16px 0;
+  text-align: center;
+  border: 1px dashed rgba(255,255,255,0.06);
+  border-radius: 8px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--card-border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.metric-icon-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-title {
+  font-size: 11px;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.metric-value-box {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.metric-val {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.metric-unit {
+  font-size: 10px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.metric-source-tag {
+  font-size: 8px;
+  color: #6b7280;
+  letter-spacing: 0.3px;
+  text-align: right;
+}
+
+/* Water body telemetry unavailable warning */
+.water-warning-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.water-warning-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.water-warning-content span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.water-warning-content p {
+  margin: 0;
+  font-size: 11px;
+  color: #d1d5db;
+  line-height: 1.4;
+}
