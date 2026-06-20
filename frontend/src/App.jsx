@@ -34,8 +34,9 @@ export default function App() {
 
   const fetchAois = async () => {
     setLoadingAois(true);
+    const url = `${API_BASE_URL}/aoi`;
     try {
-      const res = await fetch(`${API_BASE_URL}/aoi`);
+      const res = await fetch(url);
       if (res.ok) {
         const data = await res.json();
         setAois(data);
@@ -45,7 +46,7 @@ export default function App() {
         }
       }
     } catch (err) {
-      console.error("Failed to load Areas of Interest:", err);
+      console.error(`Failed to load Areas of Interest from ${url}:`, err);
     } finally {
       setLoadingAois(false);
     }
@@ -82,8 +83,8 @@ export default function App() {
         setProviderUsed('system_error');
       }
     } catch (err) {
-      console.error("Search API failed:", err);
-      setReportText("Network error: Could not reach the AGRIOS backend server. Verify the server is running on localhost:8000.");
+      console.error(`Search API failed at ${API_BASE_URL}/search:`, err);
+      setReportText(`Network error: Could not reach the AGRIOS backend server at ${API_BASE_URL}/search. (Error: ${err.message})`);
       setReadings([]);
       setProviderUsed('network_error');
     } finally {
@@ -93,19 +94,25 @@ export default function App() {
 
   // Callback to create a new AOI
   const handleCreateAoi = async (aoiData) => {
-    const res = await fetch(`${API_BASE_URL}/aoi`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(aoiData)
-    });
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.detail || 'Failed to create location');
+    const url = `${API_BASE_URL}/aoi`;
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(aoiData)
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.detail || 'Failed to create location');
+      }
+      const newAoi = await res.json();
+      setAois((prev) => [...prev, newAoi]);
+      setActiveAoiId(newAoi.id);
+      setPrefillCoords(null); // Reset click position on successful registration
+    } catch (err) {
+      console.error(`Create AOI failed at ${url}:`, err);
+      throw new Error(`Failed to connect to backend at ${url}. Details: ${err.message}`);
     }
-    const newAoi = await res.json();
-    setAois((prev) => [...prev, newAoi]);
-    setActiveAoiId(newAoi.id);
-    setPrefillCoords(null); // Reset click position on successful registration
   };
 
   // Toggle watch status
